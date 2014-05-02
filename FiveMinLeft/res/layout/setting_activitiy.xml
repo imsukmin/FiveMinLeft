@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/button1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/CheckBox09"
+        android:layout_marginTop="24dp"
+        android:text="Start" />
+
+    <CheckBox
+        android:id="@+id/checkBox00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="28dp"
+        android:text=" 1" />
+
+    <CheckBox
+        android:id="@+id/CheckBox01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/checkBox00"
+        android:text=" 2" />
+
+    <CheckBox
+        android:id="@+id/CheckBox02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/CheckBox01"
+        android:text=" 3" />
+
+    <CheckBox
+        android:id="@+id/CheckBox03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/CheckBox02"
+        android:text=" 4" />
+
+    <CheckBox
+        android:id="@+id/CheckBox04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/CheckBox03"
+        android:text=" 5" />
+
+    <CheckBox
+        android:id="@+id/CheckBox05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/CheckBox04"
+        android:text=" 6" />
+
+    <CheckBox
+        android:id="@+id/CheckBox06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/CheckBox05"
+        android:text=" 7" />
+
+    <CheckBox
+        android:id="@+id/CheckBox07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/CheckBox06"
+        android:text=" 8" />
+
+    <CheckBox
+        android:id="@+id/CheckBox08"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/CheckBox07"
+        android:text=" 9" />
+
+    <CheckBox
+        android:id="@+id/CheckBox09"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/CheckBox08"
+        android:text="10" />
+
+    <Spinner
+        android:id="@+id/spinner00"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/checkBox00"
+        android:layout_toRightOf="@+id/CheckBox09" />
+
+    <Spinner
+        android:id="@+id/Spinner01"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/spinner00"
+        android:layout_toRightOf="@+id/spinner00" />
+
+    <Spinner
+        android:id="@+id/Spinner02"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/Spinner01"
+        android:layout_toRightOf="@+id/Spinner01" />
+
+    <Spinner
+        android:id="@+id/Spinner10"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/CheckBox01"
+        android:layout_toLeftOf="@+id/Spinner02" />
+
+    <Spinner
+        android:id="@+id/Spinner11"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/Spinner10"
+        android:layout_toLeftOf="@+id/Spinner01" />
+
+    <Spinner
+        android:id="@+id/Spinner12"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/Spinner10"
+        android:layout_toRightOf="@+id/Spinner01" />
+
+    <Spinner
+        android:id="@+id/Spinner20"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/CheckBox02"
+        android:layout_toRightOf="@+id/CheckBox09" />
+
+    <Spinner
+        android:id="@+id/Spinner21"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/Spinner20"
+        android:layout_toRightOf="@+id/Spinner11" />
+
+    <Spinner
+        android:id="@+id/Spinner22"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/Spinner21"
+        android:layout_toRightOf="@+id/Spinner10" />
+
+    <Spinner
+        android:id="@+id/Spinner30"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/Spinner20"
+        android:layout_alignTop="@+id/CheckBox03" />
+
+    <Spinner
+        android:id="@+id/Spinner31"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/Spinner30"
+        android:layout_toRightOf="@+id/Spinner30" />
+
+    <Spinner
+        android:id="@+id/Spinner42"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Spinner31"
+        android:layout_toRightOf="@+id/Spinner31" />
+
+    <Spinner
+        android:id="@+id/Spinner52"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Spinner42"
+        android:layout_toRightOf="@+id/Spinner31" />
+
+    <Spinner
+        android:id="@+id/Spinner62"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Spinner52"
+        android:layout_toRightOf="@+id/Spinner31" />
+
+    <Spinner
+        android:id="@+id/Spinner51"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/Spinner61"
+        android:layout_toLeftOf="@+id/Spinner42" />
+
+    <Spinner
+        android:id="@+id/Spinner41"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/Spinner51"
+        android:layout_toLeftOf="@+id/Spinner42" />
+
+    <Spinner
+        android:id="@+id/Spinner61"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/Spinner62"
+        android:layout_toRightOf="@+id/Spinner30" />
+
+    <Spinner
+        android:id="@+id/Spinner40"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/Spinner51"
+        android:layout_toLeftOf="@+id/Spinner51" />
+
+    <Spinner
+        android:id="@+id/Spinner32"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Spinner21"
+        android:layout_toRightOf="@+id/Spinner21" />
+
+    <Spinner
+        android:id="@+id/Spinner50"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/Spinner61"
+        android:layout_toLeftOf="@+id/Spinner51" />
+
+    <Spinner
+        android:id="@+id/Spinner60"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Spinner51"
+        android:layout_toLeftOf="@+id/Spinner51" />
+
+    <Spinner
+        android:id="@+id/Spinner72"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Spinner62"
+        android:layout_toRightOf="@+id/Spinner61" />
+
+    <Spinner
+        android:id="@+id/Spinner82"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Spinner72"
+        android:layout_toRightOf="@+id/Spinner61" />
+
+    <Spinner
+        android:id="@+id/Spinner92"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Spinner82"
+        android:layout_toRightOf="@+id/Spinner61" />
+
+    <Spinner
+        android:id="@+id/Spinner70"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/Spinner82"
+        android:layout_toLeftOf="@+id/Spinner61" />
+
+    <Spinner
+        android:id="@+id/Spinner80"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/Spinner92"
+        android:layout_toLeftOf="@+id/Spinner61" />
+
+    <Spinner
+        android:id="@+id/Spinner90"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Spinner80"
+        android:layout_toLeftOf="@+id/Spinner61" />
+
+    <Spinner
+        android:id="@+id/Spinner81"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/Spinner91"
+        android:layout_toRightOf="@+id/Spinner70" />
+
+    <Spinner
+        android:id="@+id/Spinner71"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/Spinner81"
+        android:layout_toRightOf="@+id/Spinner70" />
+
+    <Spinner
+        android:id="@+id/Spinner91"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/Spinner92"
+        android:layout_toLeftOf="@+id/Spinner92" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/spinner00"
+        android:layout_alignLeft="@+id/spinner00"
+        android:layout_marginLeft="34dp"
+        android:text="Hour"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Spinner01"
+        android:layout_alignLeft="@+id/Spinner01"
+        android:layout_marginLeft="25dp"
+        android:text="Minute"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/Spinner02"
+        android:layout_marginLeft="21dp"
+        android:text="Second"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>
