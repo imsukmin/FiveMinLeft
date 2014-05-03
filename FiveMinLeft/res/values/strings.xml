@@ -5,4 +5,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <!-- add string  -->
+    <string name="button_label">Change Time</string>
+    <string name="time_txt">Current Time (H:M): </string>
+    
 </resources>
