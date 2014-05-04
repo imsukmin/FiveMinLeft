@@ -34,8 +34,8 @@
                 android:layout_width="140dp"
                 android:layout_height="45dp"
                 android:background="@android:drawable/btn_default"
-                android:textOff="Start"
-                android:textOn="Pause" />
+                android:textOff="@string/pause"
+                android:textOn="@string/start" />
 
             <Button
                 android:id="@+id/btnPause"

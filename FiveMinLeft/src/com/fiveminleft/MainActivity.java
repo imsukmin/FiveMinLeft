@@ -1,7 +1,5 @@
 package com.fiveminleft;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -9,8 +7,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.os.Handler;
-import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -24,16 +20,15 @@ public class MainActivity extends Activity {
 
 	private Button stopButton; 
 	private ToggleButton spButton; //Start-Pause Button
-	private long startTime = 0L; 
-	private Handler myHandler = new Handler(); 
-	long timeInMillies = 0L; 
-	long timeSwap = 0L; 
-	long finalTime = 0L;
+
 	boolean[] checkState = new boolean[10];
-	int[][] setTimes = new int[10][3];
+	int[][] setTimes = new int[3][10];
 	String[] boardTimer = new String[10];
 	long[] finalTimer = new long[10];
-	CountDownTimer timer = null;
+	int totalTime = 0;
+
+	CountDown timer;
+
 	
 	
 	@Override
@@ -59,33 +54,37 @@ public class MainActivity extends Activity {
 			checkState[i] = false;	
 		}
 		Intent intent = getIntent();
-		checkState = intent.getBooleanArrayExtra("checkState");
-		setTimes[0] = intent.getExtras().getIntArray("timeState0");
-		setTimes[1] = intent.getExtras().getIntArray("timeState1");
+		checkState = intent.getBooleanArrayExtra("checkState");			// confirm CheckBoxes
+		setTimes[0] = intent.getExtras().getIntArray("timeState0");		// hours value
+		setTimes[1] = intent.getExtras().getIntArray("timeState1");		// minutes value
 		setTimes[2] = intent.getExtras().getIntArray("timeState2");
 		boardTimer = intent.getExtras().getStringArray("boardTimer");
-		for (int i = 0, index = 0; i < 10; i++) {
+		int index = 0;
+		for (int i = 0; i < 10; i++) {
 			if(checkState[i]){
 				setTime[index].setTextColor(Color.WHITE);
-				setTime[index].setText((index+1) + ".  " + boardTimer[index] );
-				finalTimer[i] = (setTimes[index][0]*3600 + setTimes[index][1]*60 + setTimes[index][2]);
+				setTime[index].setText((index+1) + ".  " + boardTimer[i] );
+				finalTimer[i] = (setTimes[0][index]*3600 + setTimes[1][index]*60 + setTimes[2][index]);
+				boardTimer[i] = boardTimer[i] + " || " + finalTimer[i];
+				totalTime += finalTimer[i];
 				index++;
 			} 
 		}
 		
+		// Start Timer
+		timer = new CountDown(totalTime*1000, 1000);
+		timer.start();
+
 		spButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				// TODO Auto-generated method stub
 				if (isChecked) {
 		            // The toggle is enabled
-					startTime = SystemClock.uptimeMillis();
-					myHandler.postDelayed(updateTimerMethod, 0);
+					timer.cancel();
 		        } else {
 		            // The toggle is disabled
-					timeSwap += timeInMillies;
-					myHandler.removeCallbacks(updateTimerMethod);
+		        	timer.start();
 		        }
 			}
 		});
@@ -96,7 +95,7 @@ public class MainActivity extends Activity {
 				
 				new AlertDialog.Builder(MainActivity.this)
 			    .setTitle("Hey! 5 Minutes Left")
-			    .setMessage("Are you sure you want to EXIT timer?")
+			    .setMessage("Are you sure you want to EXIT?")
 			    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 			        public void onClick(DialogInterface dialog, int which) { 
 			            // continue exit
@@ -108,29 +107,57 @@ public class MainActivity extends Activity {
 			            // do nothing
 			        }
 			     })
-			    .setIcon(android.R.drawable.ic_dialog_alert)
 			    .show();
 			}
 		});
-
 	}
 
-	
-	private Runnable updateTimerMethod = new Runnable() {
+	public class CountDown extends CountDownTimer{
 
-		public void run() {
-			timeInMillies = SystemClock.uptimeMillis() - startTime;
-			finalTime = timeSwap + timeInMillies;
-
-			int seconds = (int) (finalTime / 1000);
-			int minutes = seconds / 60;
-			seconds = seconds % 60;
-			int milliseconds = (int) (finalTime % 1000);
-			textTimer.setText("" + minutes + ":"
-					+ String.format("%02d", seconds) + ":"
-					+ String.format("%03d", milliseconds));
-			myHandler.postDelayed(this, 0);
-		}
-
-	};
+		int currentIdx=0;
+		long totalSecond;
+		long seconds;
+		long minutes;
+		long hours;
+		 
+        public CountDown(long millisInFuture, long countDownInterval) {
+            super(millisInFuture, countDownInterval);
+        }
+        
+        @Override
+        public void onFinish() {
+        	textTimer.setText("--- Time OUT!! ---");
+            System.out.println("타이머가 다 되었습니다.");
+			new AlertDialog.Builder(MainActivity.this)
+		    .setTitle("Hey! 5 Minutes Left")
+		    .setMessage("---TIME OUT!!---")
+		    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+		        public void onClick(DialogInterface dialog, int which) { 
+		            // continue exit
+		        	finish();
+		        }
+		     })
+		    .show();
+        }
+ 
+        @Override
+        public void onTick(long millisUntilFinished) {
+        	
+        	totalSecond = (millisUntilFinished/1000);
+        	
+        	if(totalSecond == totalTime - finalTimer[currentIdx]){
+        		
+        	}
+        	
+        	hours = totalSecond/3600;
+        	minutes = (totalSecond%3600)/60;
+        	seconds = (totalSecond%60)%60;
+        	
+			textTimer.setText("" + hours + ":"
+			+ String.format("%02d", minutes) + ":"
+			+ String.format("%02d", seconds));
+//            System.out.println("타이머 : " + (millisUntilFinished/1000));
+            
+        }
+    }
 }

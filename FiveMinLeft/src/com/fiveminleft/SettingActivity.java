@@ -29,7 +29,7 @@ public class SettingActivity extends Activity implements
 	static Dialog getDialog;
 	static final Intent intentG = new Intent();
 	static final boolean[] isChecked = new boolean[10];
-	static final int[][] isTime = new int[10][3];
+	static final int[][] isTime = new int[3][10];
 	static final CheckBox[] checkBox = new CheckBox[10];
 	static final EditText[] setTime = new EditText[10];
 	static final String[] boardTimer = new String[10];
@@ -77,7 +77,6 @@ public class SettingActivity extends Activity implements
 			checkBox[i].setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					// TODO Auto-generated method stub
 					if (checkBox[index].isChecked()) {
 						intentG.putExtra("slotIndex", index);
 						setTime[index].setEnabled(true);
@@ -96,7 +95,6 @@ public class SettingActivity extends Activity implements
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				for (int i = 0; i < isChecked.length; i++) {
 					isChecked[i] = checkBox[i].isChecked();
 				}
@@ -147,7 +145,8 @@ public class SettingActivity extends Activity implements
 	public void showDialog() {
 		
 		final int[] timer = new int[3];
-
+		int slotIdx = intentG.getExtras().getInt("slotIndex");
+		
 		final Dialog getDialog = new Dialog(SettingActivity.this);
 		getDialog.setContentView(R.layout.timepicker);
 		Button btnOK = (Button) getDialog.findViewById(R.id.dialogOK);
@@ -158,18 +157,21 @@ public class SettingActivity extends Activity implements
 		hour.setMinValue(0); // min value 0
 		hour.setWrapSelectorWheel(true);
 		hour.setOnValueChangedListener(this);
+		hour.setValue(isTime[0][slotIdx]);
 		final NumberPicker min = (NumberPicker) getDialog
 				.findViewById(R.id.setMinute);
 		min.setMaxValue(59); // max value 59
 		min.setMinValue(0); // min value 0
 		min.setWrapSelectorWheel(true);
 		min.setOnValueChangedListener(this);
+		min.setValue(isTime[1][slotIdx]);
 		final NumberPicker sec = (NumberPicker) getDialog
 				.findViewById(R.id.setSecond);
 		sec.setMaxValue(59); // max value 59
 		sec.setMinValue(1); // min value 1
 		sec.setWrapSelectorWheel(true);
 		sec.setOnValueChangedListener(this);
+		sec.setValue(isTime[2][slotIdx]);
 		btnOK.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -179,14 +181,14 @@ public class SettingActivity extends Activity implements
 				timer[0] = hour.getValue(); 
 				timer[1] = min.getValue();
 				timer[2] = sec.getValue();
-				boardTime = "Hour [" + timer[0]  + "] Minute [" + timer[1] + "] Second [" + timer[2] + "]";
-				
+				boardTime = "" + timer[0]  + " : " + timer[1] + " : " + timer[2] + 
+						" || total sec :" + (timer[0]*3600 + timer[1]*60 + timer[2]);
 				setTime[slotIndex].setText(boardTime.toCharArray(), 0, boardTime.length());;
 				boardTimer[slotIndex] = boardTime; 
-				isTime[slotIndex][0] = timer[0];
-				isTime[slotIndex][1] = timer[1];
-				isTime[slotIndex][2] = timer[2];
-				makeToast("Setting Complete!");
+				isTime[0][slotIndex] = timer[0];
+				isTime[1][slotIndex] = timer[1];
+				isTime[2][slotIndex] = timer[2];
+				makeToast("NO. " + (slotIndex+1) + "Setting Success!");
 				getDialog.dismiss();
 			}
 		});
