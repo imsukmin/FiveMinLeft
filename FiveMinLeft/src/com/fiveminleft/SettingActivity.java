@@ -1,16 +1,12 @@
 package com.fiveminleft;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -61,12 +57,14 @@ public class SettingActivity extends Activity implements
 		setTime[8] = (EditText) findViewById(R.id.setTime08);
 		setTime[9] = (EditText) findViewById(R.id.setTime09);
 
+		final Button startButton = (Button) findViewById(R.id.btnStartAtSetting);
+		final Button exitButton = (Button) findViewById(R.id.btnExit);
+		
 		for (int i = 0; i < setTime.length; i++) {
 			final int index = i;
 			setTime[i].setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					// TODO Auto-generated method stub
 					intentG.putExtra("slotNumber", index);
 					showDialog();
 				}
@@ -81,8 +79,18 @@ public class SettingActivity extends Activity implements
 						intentG.putExtra("slotIndex", index);
 						setTime[index].setEnabled(true);
 						showDialog();
+						startButton.setEnabled(true);
 					} else if (!(checkBox[index].isChecked())) {
 						setTime[index].setEnabled(false);
+						for (int j = 0; j < checkBox.length; j++) {
+							if(checkBox[j].isChecked()){
+								break;
+							}
+							if(checkBox.length == j+1){
+								startButton.setEnabled(false);								
+							}
+							
+						}
 					}
 				}
 			});
@@ -90,7 +98,6 @@ public class SettingActivity extends Activity implements
 
 		}
 
-		Button startButton = (Button) findViewById(R.id.btnStartAtSetting);
 		startButton.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -109,12 +116,11 @@ public class SettingActivity extends Activity implements
 				startActivity(intent);
 			}
 		});
-		Button exitButton = (Button) findViewById(R.id.btnExit);
+		
 		exitButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				new AlertDialog.Builder(SettingActivity.this)
 			    .setTitle("Hey! 5 Minutes Left")
 			    .setMessage("EXIT application?")
@@ -138,8 +144,7 @@ public class SettingActivity extends Activity implements
 
 	@Override
 	public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-		// TODO Auto-generated method stub
-		Log.i("value is",""+newVal);
+//		Log.i("value is",""+newVal);
 	}
 
 	public void showDialog() {
@@ -151,13 +156,16 @@ public class SettingActivity extends Activity implements
 		getDialog.setContentView(R.layout.timepicker);
 		Button btnOK = (Button) getDialog.findViewById(R.id.dialogOK);
 		Button btnCancel = (Button) getDialog.findViewById(R.id.dialogCancel);
+		
 		final NumberPicker hour = (NumberPicker) getDialog
 				.findViewById(R.id.setHour);
 		hour.setMaxValue(23); // max value 23
 		hour.setMinValue(0); // min value 0
 		hour.setWrapSelectorWheel(true);
 		hour.setOnValueChangedListener(this);
+		if(hour.getValue() == 0)
 		hour.setValue(isTime[0][slotIdx]);
+		
 		final NumberPicker min = (NumberPicker) getDialog
 				.findViewById(R.id.setMinute);
 		min.setMaxValue(59); // max value 59
@@ -165,13 +173,18 @@ public class SettingActivity extends Activity implements
 		min.setWrapSelectorWheel(true);
 		min.setOnValueChangedListener(this);
 		min.setValue(isTime[1][slotIdx]);
+		
 		final NumberPicker sec = (NumberPicker) getDialog
 				.findViewById(R.id.setSecond);
 		sec.setMaxValue(59); // max value 59
 		sec.setMinValue(1); // min value 1
 		sec.setWrapSelectorWheel(true);
 		sec.setOnValueChangedListener(this);
-		sec.setValue(isTime[2][slotIdx]);
+		if(sec.getValue()==0){
+			sec.setValue(1);
+		} else {
+			sec.setValue(isTime[2][slotIdx]);
+		}
 		btnOK.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
