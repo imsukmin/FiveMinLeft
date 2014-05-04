@@ -2,11 +2,16 @@
 <resources>
 
     <string name="app_name">Hey! 5 minutes Left!!</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
-    <!-- add string  -->
-    <string name="button_label">Change Time</string>
-    <string name="time_txt">Current Time (H:M): </string>
     
+    <!-- Common -->
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="pause">Pause</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="exit">Exit</string>
+    
+    <!-- setting_activity.xml  -->
+	<string name="setTimeHint">Touch this and Set Timer</string> 
 </resources>

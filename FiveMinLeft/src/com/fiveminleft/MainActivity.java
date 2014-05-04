@@ -1,9 +1,14 @@
 package com.fiveminleft;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.view.View;
@@ -25,6 +30,11 @@ public class MainActivity extends Activity {
 	long timeSwap = 0L; 
 	long finalTime = 0L;
 	boolean[] checkState = new boolean[10];
+	int[][] setTimes = new int[10][3];
+	String[] boardTimer = new String[10];
+	long[] finalTimer = new long[10];
+	CountDownTimer timer = null;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,16 +59,18 @@ public class MainActivity extends Activity {
 			checkState[i] = false;	
 		}
 		Intent intent = getIntent();
-		checkState = intent.getBooleanArrayExtra("checkStare");
-		for (int i = 0; i < 10; i++) {
-			if(!checkState[i]){
-				setTime[i].setTextColor(Color.BLACK);
-				setTime[i].setText("it is NOT check");
-			} else {
-				setTime[i].setTextColor(Color.BLUE);
-				setTime[i].setText("it is check");				
-			}
-			
+		checkState = intent.getBooleanArrayExtra("checkState");
+		setTimes[0] = intent.getExtras().getIntArray("timeState0");
+		setTimes[1] = intent.getExtras().getIntArray("timeState1");
+		setTimes[2] = intent.getExtras().getIntArray("timeState2");
+		boardTimer = intent.getExtras().getStringArray("boardTimer");
+		for (int i = 0, index = 0; i < 10; i++) {
+			if(checkState[i]){
+				setTime[index].setTextColor(Color.WHITE);
+				setTime[index].setText((index+1) + ".  " + boardTimer[index] );
+				finalTimer[i] = (setTimes[index][0]*3600 + setTimes[index][1]*60 + setTimes[index][2]);
+				index++;
+			} 
 		}
 		
 		spButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -68,7 +80,6 @@ public class MainActivity extends Activity {
 				// TODO Auto-generated method stub
 				if (isChecked) {
 		            // The toggle is enabled
-					timeSwap = 0L;
 					startTime = SystemClock.uptimeMillis();
 					myHandler.postDelayed(updateTimerMethod, 0);
 		        } else {
@@ -82,7 +93,23 @@ public class MainActivity extends Activity {
 		stopButton = (Button) findViewById(R.id.btnPause);
 		stopButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				finish();
+				
+				new AlertDialog.Builder(MainActivity.this)
+			    .setTitle("Hey! 5 Minutes Left")
+			    .setMessage("Are you sure you want to EXIT timer?")
+			    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+			        public void onClick(DialogInterface dialog, int which) { 
+			            // continue exit
+			        	finish();
+			        }
+			     })
+			    .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+			        public void onClick(DialogInterface dialog, int which) { 
+			            // do nothing
+			        }
+			     })
+			    .setIcon(android.R.drawable.ic_dialog_alert)
+			    .show();
 			}
 		});
 
