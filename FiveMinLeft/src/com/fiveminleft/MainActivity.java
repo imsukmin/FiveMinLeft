@@ -66,13 +66,17 @@ public class MainActivity extends Activity {
 			if(checkState[i]){
 				setTime[index].setTextColor(Color.WHITE);
 				setTime[index].setText((index+1) + ".  " + boardTimer[i] );
-				finalTimer[i] = (setTimes[0][index]*3600 + setTimes[1][index]*60 + setTimes[2][index]);
+				finalTimer[i] = (setTimes[0][i]*3600 + setTimes[1][i]*60 + setTimes[2][i]);
 				boardTimer[i] = boardTimer[i] + " || " + finalTimer[i];
 				totalTime += finalTimer[i];
 				index++;
+//				Log.i("index check", "index is " + index);
+//				Log.i("text check", "boardTimer is " + boardTimer[i]);
+//				Log.i("timer check", "setTimes is " + setTimes[0][i] + ":" + setTimes[1][i]  + ":" + setTimes[2][i]);
+//				Log.i("State check", "totalTime is " + totalTime + " finalTimer is " + finalTimer[i]  + " checkState is " + checkState[i]);
 			} 
 		}
-		
+//		Log.i("Main", "totalSecond is " + totalTime);
 		// Start Timer
 		timer = new CountDown(totalTime*1000, 1000);
 		timer.start();
@@ -147,11 +151,11 @@ public class MainActivity extends Activity {
         public void onFinish() {
         	timer.cancel();
         	ringtone.play();
-        	textTimer.setText("--- Time OUT!! ---");
+        	textTimer.setText("Time OUT!");
             System.out.println("타이머가 다 되었습니다.");
 			new AlertDialog.Builder(MainActivity.this)
 		    .setTitle("Hey! 5 Minutes Left")
-		    .setMessage("---TIME OUT!!---")
+		    .setMessage("-- TIME OUT!! --")
 		    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 		        public void onClick(DialogInterface dialog, int which) { 
 		        	finish();
@@ -165,7 +169,7 @@ public class MainActivity extends Activity {
         	Intent getCheckData = getIntent();
         	checkState = getCheckData.getBooleanArrayExtra("checkState");			// confirm CheckBoxes
         	totalSecond = (millisUntilFinished/1000);
-        
+//        	Log.e("Main", "totalSecond is [" + totalSecond + "] tempTime is [" + tempTime  + "] currentIdx is " + currentIdx);
         	if(totalSecond <= (tempTime) ){
         		// striking current textView
         		setTime[currentIdx].setTextColor(Color.GRAY);
@@ -194,7 +198,8 @@ public class MainActivity extends Activity {
 			textTimer.setText("" + hours + ":"
 			+ String.format("%02d", minutes) + ":"
 			+ String.format("%02d", seconds));
-            
+//            Log.e("Result1", "setTime is " + setTime[currentIdx].getTextSize() );
+//            Log.e("Result2", "checkState is " + checkState[currentIdx] + "tempTime is " + tempTime );
         }
     }
 }

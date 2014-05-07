@@ -5,8 +5,8 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -60,16 +60,19 @@ public class SettingActivity extends Activity implements
 		final Button startButton = (Button) findViewById(R.id.btnStartAtSetting);
 		final Button exitButton = (Button) findViewById(R.id.btnExit);
 		
+		// Set TextViews
 		for (int i = 0; i < setTime.length; i++) {
 			final int index = i;
 			setTime[i].setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					intentG.putExtra("slotNumber", index);
+					intentG.putExtra("slotIndex", index);
 					showDialog();
 				}
 			});
 		}
+		
+		// Set Checkbox array
 		for (int i = 0; i < checkBox.length; i++) {
 			final int index = i;
 			checkBox[i].setOnClickListener(new OnClickListener() {
@@ -77,19 +80,24 @@ public class SettingActivity extends Activity implements
 				public void onClick(View v) {
 					if (checkBox[index].isChecked()) {
 						intentG.putExtra("slotIndex", index);
-						setTime[index].setEnabled(true);
+						
 						showDialog();
-						startButton.setEnabled(true);
+						
+						if(checkBox[index].isChecked() == true){
+							startButton.setTextColor(Color.WHITE);
+						}
+					
 					} else if (!(checkBox[index].isChecked())) {
-						setTime[index].setEnabled(false);
-						for (int j = 0; j < checkBox.length; j++) {
-							if(checkBox[j].isChecked()){
-								break;
-							}
-							if(checkBox.length == j+1){
-								startButton.setEnabled(false);								
-							}
-							
+						setTime[index].setTextColor(Color.GRAY);
+					}
+					// if all checkbox are not checked turn off start button
+					for (int j = 0; j < checkBox.length; j++) {
+						if(checkBox[j].isChecked()){
+							startButton.setEnabled(true);
+							break;
+						}
+						if(checkBox.length == j+1){
+							startButton.setEnabled(false);	
 						}
 					}
 				}
@@ -113,6 +121,12 @@ public class SettingActivity extends Activity implements
 				intent.putExtra("timeState1", isTime[1]);
 				intent.putExtra("timeState2", isTime[2]);
 				intent.putExtra("boardTimer", boardTimer);
+				for (int i = 0; i < 10 ; i++) {
+//					Log.d("state check", "isChecked : " + isChecked[i] + 
+//										" isTime is " + isTime[0][i] + ":" + isTime[1][i] + ":" + isTime[2][i] +
+//										" boardTimer is " + boardTimer[i]);
+					
+				}
 				startActivity(intent);
 			}
 		});
@@ -190,7 +204,7 @@ public class SettingActivity extends Activity implements
 			public void onClick(View v) {
 				String boardTime;
 				int slotIndex = intentG.getExtras().getInt("slotIndex");
-				Log.e("" + slotIndex,"" + slotIndex);
+//				Log.d("" + slotIndex,"" + slotIndex);
 				timer[0] = hour.getValue(); 
 				timer[1] = min.getValue();
 				timer[2] = sec.getValue();
@@ -202,12 +216,27 @@ public class SettingActivity extends Activity implements
 				isTime[1][slotIndex] = timer[1];
 				isTime[2][slotIndex] = timer[2];
 				makeToast("NO. " + (slotIndex+1) + " Slot Setting Success!");
+				checkBox[slotIndex].setChecked(true);
+				setTime[slotIndex].setTextColor(Color.WHITE);
+				// if all checkbox are not checked turn off start button
+				for (int j = 0; j < checkBox.length; j++) {
+					if(checkBox[j].isChecked()){
+						findViewById(R.id.btnStartAtSetting).setEnabled(true);
+						break;
+					}
+					if(checkBox.length == j+1){
+						findViewById(R.id.btnStartAtSetting).setEnabled(false);	
+					}
+				}
 				getDialog.dismiss();
 			}
 		});
 		btnCancel.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				int slotIndex = intentG.getExtras().getInt("slotIndex");
+				setTime[slotIndex].setTextColor(Color.GRAY);
+				checkBox[slotIndex].setChecked(false);
 				makeToast("Setting Canceled!");
 				getDialog.dismiss(); // dismiss the dialog
 			}

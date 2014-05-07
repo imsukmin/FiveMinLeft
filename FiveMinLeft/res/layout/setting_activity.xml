@@ -26,12 +26,14 @@
 
             <TextView
                 android:id="@+id/setTime00"
-                android:layout_width="200dp"
+                android:layout_width="230dp"
                 android:layout_height="32dp"
                 android:layout_margin="3dp"
-                android:enabled="false"
-                android:focusable="false"
-                android:hint="@string/setTimeHint" >
+				android:onClick="onClick"
+				android:clickable="true"
+				android:textColor="#888"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/setTimeHint" >
 
             </TextView>
         </LinearLayout>
@@ -50,12 +52,14 @@
 
             <TextView
                 android:id="@+id/setTime01"
-                android:layout_width="200dp"
+                android:layout_width="230dp"
                 android:layout_height="32dp"
                 android:layout_margin="3dp"
-                android:enabled="false"
-                android:focusable="false"
-                android:hint="@string/setTimeHint" />
+				android:onClick="onClick"
+				android:clickable="true"
+				android:textColor="#888"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/setTimeHint" />
         </LinearLayout>
 
         <LinearLayout
@@ -72,12 +76,14 @@
 
             <TextView
                 android:id="@+id/setTime02"
-                android:layout_width="200dp"
+                android:layout_width="230dp"
                 android:layout_height="32dp"
                 android:layout_margin="3dp"
-                android:enabled="false"
-                android:focusable="false"
-                android:hint="@string/setTimeHint" />
+                android:onClick="onClick"
+				android:clickable="true"
+				android:textColor="#888"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/setTimeHint" />
         </LinearLayout>
 
         <LinearLayout
@@ -94,12 +100,14 @@
 
             <TextView
                 android:id="@+id/setTime03"
-                android:layout_width="200dp"
+                android:layout_width="230dp"
                 android:layout_height="32dp"
                 android:layout_margin="3dp"
-                android:enabled="false"
-                android:focusable="false"
-                android:hint="@string/setTimeHint" />
+                android:onClick="onClick"
+				android:clickable="true"
+				android:textColor="#888"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/setTimeHint" />
         </LinearLayout>
 
         <LinearLayout
@@ -116,12 +124,14 @@
 
             <TextView
                 android:id="@+id/setTime04"
-                android:layout_width="200dp"
+                android:layout_width="230dp"
                 android:layout_height="32dp"
                 android:layout_margin="3dp"
-                android:enabled="false"
-                android:focusable="false"
-                android:hint="@string/setTimeHint" />
+                android:onClick="onClick"
+				android:clickable="true"
+				android:textColor="#888"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/setTimeHint" />
         </LinearLayout>
 
         <LinearLayout
@@ -138,12 +148,14 @@
 
             <TextView
                 android:id="@+id/setTime05"
-                android:layout_width="200dp"
+                android:layout_width="230dp"
                 android:layout_height="32dp"
                 android:layout_margin="3dp"
-                android:enabled="false"
-                android:focusable="false"
-                android:hint="@string/setTimeHint" />
+                android:onClick="onClick"
+				android:clickable="true"
+				android:textColor="#888"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/setTimeHint" />
         </LinearLayout>
 
         <LinearLayout
@@ -160,12 +172,14 @@
 
             <TextView
                 android:id="@+id/setTime06"
-                android:layout_width="200dp"
+                android:layout_width="230dp"
                 android:layout_height="32dp"
                 android:layout_margin="3dp"
-                android:enabled="false"
-                android:focusable="false"
-                android:hint="@string/setTimeHint" />
+                android:onClick="onClick"
+				android:clickable="true"
+				android:textColor="#888"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/setTimeHint" />
         </LinearLayout>
 
         <LinearLayout
@@ -182,12 +196,14 @@
 
             <TextView
                 android:id="@+id/setTime07"
-                android:layout_width="200dp"
+                android:layout_width="230dp"
                 android:layout_height="32dp"
                 android:layout_margin="3dp"
-                android:enabled="false"
-                android:focusable="false"
-                android:hint="@string/setTimeHint" />
+                android:onClick="onClick"
+				android:clickable="true"
+				android:textColor="#888"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/setTimeHint" />
         </LinearLayout>
 
         <LinearLayout
@@ -204,12 +220,14 @@
 
             <TextView
                 android:id="@+id/setTime08"
-                android:layout_width="200dp"
+                android:layout_width="230dp"
                 android:layout_height="32dp"
                 android:layout_margin="3dp"
-                android:enabled="false"
-                android:focusable="false"
-                android:hint="@string/setTimeHint" />
+                android:onClick="onClick"
+				android:clickable="true"
+				android:textColor="#888"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/setTimeHint" />
         </LinearLayout>
 
         <LinearLayout
@@ -226,12 +244,14 @@
 
             <TextView
                 android:id="@+id/setTime09"
-                android:layout_width="200dp"
+                android:layout_width="230dp"
                 android:layout_height="32dp"
                 android:layout_margin="3dp"
-                android:enabled="false"
-                android:focusable="false"
-                android:hint="@string/setTimeHint" />
+                android:onClick="onClick"
+				android:clickable="true"
+				android:textColor="#888"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/setTimeHint" />
         </LinearLayout>
 
         <LinearLayout
