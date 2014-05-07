@@ -5,242 +5,261 @@
     android:orientation="vertical" >
 
     <LinearLayout
-        android:id="@+id/CheckboxLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:orientation="vertical" >
-
-        <CheckBox
-            android:id="@+id/CheckBox00"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:text=" 1" />
-
-        <CheckBox
-            android:id="@+id/CheckBox01"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:text=" 2" />
-
-        <CheckBox
-            android:id="@+id/CheckBox02"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:text=" 3" />
-
-        <CheckBox
-            android:id="@+id/CheckBox03"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:text=" 4" />
-
-        <CheckBox
-            android:id="@+id/CheckBox04"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:text=" 5" />
-
-        <CheckBox
-            android:id="@+id/CheckBox05"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:text=" 6" />
-
-        <CheckBox
-            android:id="@+id/CheckBox06"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:text=" 7" />
-
-        <CheckBox
-            android:id="@+id/CheckBox07"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:text=" 8" />
-
-        <CheckBox
-            android:id="@+id/CheckBox08"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:text=" 9" />
-
-        <CheckBox
-            android:id="@+id/CheckBox09"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:text="10" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/contextLayout"
+        android:id="@+id/lineLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/CheckboxLayout"
+        android:layout_centerHorizontal="true"
         android:orientation="vertical" >
 
-        <EditText
-            android:id="@+id/setTime00"
-            android:layout_width="290dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:ems="10"
-            android:enabled="false"
-            android:focusable="false"
-            android:hint="@string/setTimeHint" />
-
-        <EditText
-            android:id="@+id/setTime01"
-            android:layout_width="290dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:ems="10"
-            android:enabled="false"
-            android:focusable="false"
-            android:hint="@string/setTimeHint" />
-
-        <EditText
-            android:id="@+id/setTime02"
-            android:layout_width="290dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:ems="10"
-            android:enabled="false"
-            android:focusable="false"
-            android:hint="@string/setTimeHint" />
-
-        <EditText
-            android:id="@+id/setTime03"
-            android:layout_width="290dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:ems="10"
-            android:enabled="false"
-            android:focusable="false"
-            android:hint="@string/setTimeHint" />
-
-        <EditText
-            android:id="@+id/setTime04"
-            android:layout_width="290dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:ems="10"
-            android:enabled="false"
-            android:focusable="false"
-            android:hint="@string/setTimeHint" />
-
-        <EditText
-            android:id="@+id/setTime05"
-            android:layout_width="290dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:ems="10"
-            android:focusable="false"
-            android:enabled="false"
-            android:hint="@string/setTimeHint" />
-
-        <EditText
-            android:id="@+id/setTime06"
-            android:layout_width="290dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:ems="10"
-            android:enabled="false"
-            android:focusable="false"
-            android:hint="@string/setTimeHint" />
-
-        <EditText
-            android:id="@+id/setTime07"
-            android:layout_width="290dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:ems="10"
-            android:enabled="false"
-            android:focusable="false"
-            android:hint="@string/setTimeHint" />
-
-        <EditText
-            android:id="@+id/setTime08"
-            android:layout_width="290dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:ems="10"
-            android:enabled="false"
-            android:focusable="false"
-            android:hint="@string/setTimeHint" />
-
-        <EditText
-            android:id="@+id/setTime09"
-            android:layout_width="290dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:ems="10"
-            android:enabled="false"
-            android:focusable="false"
-            android:hint="@string/setTimeHint" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/settingButtonLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" >
-
-        <Button
-            android:id="@+id/btnStartAtSetting"
-            style="?android:attr/buttonStyleSmall"
+        <LinearLayout
+            android:id="@+id/settingLayout00"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="0.48"
-            android:enabled="false"
-            android:text="@string/start" />
+            android:layout_height="wrap_content" >
 
-        <Button
-            android:id="@+id/btnExit"
-            style="?android:attr/buttonStyleSmall"
+            <CheckBox
+                android:id="@+id/CheckBox00"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_margin="5dp"
+                android:text="01" />
+
+            <TextView
+                android:id="@+id/setTime00"
+                android:layout_width="200dp"
+                android:layout_height="32dp"
+                android:layout_margin="3dp"
+                android:enabled="false"
+                android:focusable="false"
+                android:hint="@string/setTimeHint" >
+
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/settingLayout01"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="0.48"
-            android:text="@string/exit" />
+            android:layout_height="wrap_content" >
 
+            <CheckBox
+                android:id="@+id/CheckBox01"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_margin="5dp"
+                android:text="02" />
+
+            <TextView
+                android:id="@+id/setTime01"
+                android:layout_width="200dp"
+                android:layout_height="32dp"
+                android:layout_margin="3dp"
+                android:enabled="false"
+                android:focusable="false"
+                android:hint="@string/setTimeHint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/settingLayout02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/CheckBox02"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_margin="5dp"
+                android:text="03" />
+
+            <TextView
+                android:id="@+id/setTime02"
+                android:layout_width="200dp"
+                android:layout_height="32dp"
+                android:layout_margin="3dp"
+                android:enabled="false"
+                android:focusable="false"
+                android:hint="@string/setTimeHint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/settingLayout03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/CheckBox03"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_margin="5dp"
+                android:text="04" />
+
+            <TextView
+                android:id="@+id/setTime03"
+                android:layout_width="200dp"
+                android:layout_height="32dp"
+                android:layout_margin="3dp"
+                android:enabled="false"
+                android:focusable="false"
+                android:hint="@string/setTimeHint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/settingLayout04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/CheckBox04"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_margin="5dp"
+                android:text="05" />
+
+            <TextView
+                android:id="@+id/setTime04"
+                android:layout_width="200dp"
+                android:layout_height="32dp"
+                android:layout_margin="3dp"
+                android:enabled="false"
+                android:focusable="false"
+                android:hint="@string/setTimeHint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/settingLayout05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/CheckBox05"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_margin="5dp"
+                android:text="06" />
+
+            <TextView
+                android:id="@+id/setTime05"
+                android:layout_width="200dp"
+                android:layout_height="32dp"
+                android:layout_margin="3dp"
+                android:enabled="false"
+                android:focusable="false"
+                android:hint="@string/setTimeHint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/settingLayout06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/CheckBox06"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_margin="5dp"
+                android:text="07" />
+
+            <TextView
+                android:id="@+id/setTime06"
+                android:layout_width="200dp"
+                android:layout_height="32dp"
+                android:layout_margin="3dp"
+                android:enabled="false"
+                android:focusable="false"
+                android:hint="@string/setTimeHint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/settingLayout07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/CheckBox07"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_margin="5dp"
+                android:text="08" />
+
+            <TextView
+                android:id="@+id/setTime07"
+                android:layout_width="200dp"
+                android:layout_height="32dp"
+                android:layout_margin="3dp"
+                android:enabled="false"
+                android:focusable="false"
+                android:hint="@string/setTimeHint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/settingLayout08"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/CheckBox08"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_margin="5dp"
+                android:text="09" />
+
+            <TextView
+                android:id="@+id/setTime08"
+                android:layout_width="200dp"
+                android:layout_height="32dp"
+                android:layout_margin="3dp"
+                android:enabled="false"
+                android:focusable="false"
+                android:hint="@string/setTimeHint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/settingLayout09"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/CheckBox09"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_margin="5dp"
+                android:text="10" />
+
+            <TextView
+                android:id="@+id/setTime09"
+                android:layout_width="200dp"
+                android:layout_height="32dp"
+                android:layout_margin="3dp"
+                android:enabled="false"
+                android:focusable="false"
+                android:hint="@string/setTimeHint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/settingButtonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btnStartAtSetting"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.48"
+                android:enabled="false"
+                android:text="@string/start" />
+
+            <Button
+                android:id="@+id/btnExit"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.48"
+                android:text="@string/exit" />
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

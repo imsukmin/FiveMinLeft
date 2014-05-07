@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class SettingActivity extends Activity implements
@@ -27,7 +27,7 @@ public class SettingActivity extends Activity implements
 	static final boolean[] isChecked = new boolean[10];
 	static final int[][] isTime = new int[3][10];
 	static final CheckBox[] checkBox = new CheckBox[10];
-	static final EditText[] setTime = new EditText[10];
+	static final TextView[] setTime = new TextView[10];
 	static final String[] boardTimer = new String[10];
 
 	@Override
@@ -46,16 +46,16 @@ public class SettingActivity extends Activity implements
 		checkBox[8] = (CheckBox) findViewById(R.id.CheckBox08);
 		checkBox[9] = (CheckBox) findViewById(R.id.CheckBox09);
 
-		setTime[0] = (EditText) findViewById(R.id.setTime00);
-		setTime[1] = (EditText) findViewById(R.id.setTime01);
-		setTime[2] = (EditText) findViewById(R.id.setTime02);
-		setTime[3] = (EditText) findViewById(R.id.setTime03);
-		setTime[4] = (EditText) findViewById(R.id.setTime04);
-		setTime[5] = (EditText) findViewById(R.id.setTime05);
-		setTime[6] = (EditText) findViewById(R.id.setTime06);
-		setTime[7] = (EditText) findViewById(R.id.setTime07);
-		setTime[8] = (EditText) findViewById(R.id.setTime08);
-		setTime[9] = (EditText) findViewById(R.id.setTime09);
+		setTime[0] = (TextView) findViewById(R.id.setTime00);
+		setTime[1] = (TextView) findViewById(R.id.setTime01);
+		setTime[2] = (TextView) findViewById(R.id.setTime02);
+		setTime[3] = (TextView) findViewById(R.id.setTime03);
+		setTime[4] = (TextView) findViewById(R.id.setTime04);
+		setTime[5] = (TextView) findViewById(R.id.setTime05);
+		setTime[6] = (TextView) findViewById(R.id.setTime06);
+		setTime[7] = (TextView) findViewById(R.id.setTime07);
+		setTime[8] = (TextView) findViewById(R.id.setTime08);
+		setTime[9] = (TextView) findViewById(R.id.setTime09);
 
 		final Button startButton = (Button) findViewById(R.id.btnStartAtSetting);
 		final Button exitButton = (Button) findViewById(R.id.btnExit);
@@ -201,7 +201,7 @@ public class SettingActivity extends Activity implements
 				isTime[0][slotIndex] = timer[0];
 				isTime[1][slotIndex] = timer[1];
 				isTime[2][slotIndex] = timer[2];
-				makeToast("NO. " + (slotIndex+1) + "Setting Success!");
+				makeToast("NO. " + (slotIndex+1) + " Slot Setting Success!");
 				getDialog.dismiss();
 			}
 		});

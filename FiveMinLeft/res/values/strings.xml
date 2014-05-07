@@ -13,5 +13,5 @@
     <string name="exit">Exit</string>
     
     <!-- setting_activity.xml  -->
-	<string name="setTimeHint">Touch this and Set Timer</string> 
+	<string name="setTimeHint">Touch slot and Checkbox</string> 
 </resources>
